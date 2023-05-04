@@ -61,3 +61,27 @@
         }
     }
 ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter une photo - Galerie de Maxim Casino Armengol</title>
+</head>
+<body>
+    <h1>Ajouter une photo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Titre :</label><br>
+        <input type="text" name="titre" required><br><br>
+        <label>Description :</label><br>
+        <textarea name="description" required></textarea><br><br>
+        <label>Date :</label><br>
+        <input type="date" name="date" required><br><br>
+        <label>Lieu :</label><br>
+        <input type="text" name="lieu" required><br><br>
+        <label>Image :</label><br>
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <input type="submit" name="submit" value="Ajouter">
+    </form>
+</body>
+</html>
