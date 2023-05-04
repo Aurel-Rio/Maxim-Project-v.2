@@ -1,6 +1,8 @@
 <?php
 // Inclusion du fichier de configuration de la base de données
 require_once("./includes/config.php");
+include('./includes/navbar.php');
+include('./includes/footer.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -9,6 +11,7 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <title>Accueil - Galerie de Maxim Casino Armengol</title>
 </head>
 <body>

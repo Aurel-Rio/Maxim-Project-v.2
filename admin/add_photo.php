@@ -30,7 +30,7 @@
             }
             
             // Déplacement du fichier téléchargé
-            $destination = "uploads/" . $filename;
+            $destination = "../upload/" . $filename;
             if(move_uploaded_file($filetmpname, $destination)) {
                 // Connexion à la base de données
                 $servername = "127.0.0.1";
