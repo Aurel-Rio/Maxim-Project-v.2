@@ -12,7 +12,7 @@ if(!$conn) {
 }
 
 // Exécution de la requête SQL
-$sql = "SELECT id_exhibitions, titre, date, image, categorie FROM exhibitions;";
+$sql = "SELECT id_exhibitions, titre, date, lieu, image, categorie FROM exhibitions;";
 $result = mysqli_query($conn, $sql);
 
 // Vérification des erreurs lors de l'exécution de la requête
@@ -49,7 +49,7 @@ foreach ($categories as $categorie => $description) {
         $date = $photo["date"];
         $image = $photo["image"];
         $categorie = $photo["categorie"];
-        echo "<li><a href='photo.php?id=$id'><br/><img src='$image' alt='$titre' width='100' height='100'><br/>$titre - $date</a></li>";
+        echo "<li><a href='photo.php?id=$id'><br/><img src='$image' alt='$titre' width='500' height='500'><br/>$titre - $date</a></li>";
     }
     echo "</ul>";
 }
