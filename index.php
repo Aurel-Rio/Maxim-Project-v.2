@@ -21,3 +21,5 @@ switch ($page) {
         include 'pages/404.php';
         break;
 }
+
+?>

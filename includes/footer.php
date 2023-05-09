@@ -14,7 +14,7 @@
         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="site-name">
-        Maxim Casino Armengol
+      <p>© 2023 Maxim Casino Armengol - Tous droits réservés.</p>
       </div>
     </footer>
   </body>

@@ -5,7 +5,9 @@
         $titre = $_POST["titre"];
         $description = $_POST["description"];
         $date = $_POST["date"];
+        $date_format = date("Y-m-d", strtotime($date));
         $lieu = $_POST["lieu"];
+        $categorie = $_POST["categorie"]; // Nouvelle variable pour la catégorie
         
         // Vérification si un fichier a été téléchargé
         if(isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
@@ -43,8 +45,8 @@
                     die("Connexion échouée : " . mysqli_connect_error());
                 }
                 
-                // Insertion des données dans la base de données
-                $sql = "INSERT INTO exhibitions (titre, description, date, lieu, image) VALUES ('$titre', '$description', '$date', '$lieu', '$destination')";
+                // Insertion des données dans la base de données avec la catégorie
+                $sql = "INSERT INTO exhibitions (titre, description, date, lieu, image, categorie) VALUES ('$titre', '$description', '$date_format', '$lieu', '$destination', '$categorie')";
                 
                 if(mysqli_query($conn, $sql)) {
                     echo "L'exposition a été ajoutée avec succès.";
@@ -76,9 +78,14 @@
         <label>Description :</label><br>
         <textarea name="description" required></textarea><br><br>
         <label>Date :</label><br>
-        <input type="date" name="date" required><br><br>
+        <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
         <label>Lieu :</label><br>
         <input type="text" name="lieu" required><br><br>
+        <label>Catégorie :</label><br>
+        <select name="categorie">
+            <option value="Art digital">Art digital</option>
+            <option value="Noir & Blanc">Noir & Blanc</option>
+        </select><br><br>
         <label>Image :</label><br>
         <input type="file" name="image" accept="image/*" required><br><br>
         <input type="submit" name="submit" value="Ajouter">

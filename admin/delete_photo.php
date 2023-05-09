@@ -1,8 +1,8 @@
 <?php
 // Vérification de la soumission du formulaire
 if(isset($_POST["submit"])) {
-    // Récupération de l'identifiant de la photo à supprimer
-    $id = $_POST["id"];
+    // Récupération des identifiants des photos à supprimer
+    $ids = $_POST["ids"];
 
     // Connexion à la base de données
     $servername = "127.0.0.1";
@@ -15,21 +15,46 @@ if(isset($_POST["submit"])) {
         die("Connexion échouée : " . mysqli_connect_error());
     }
     
-    // Suppression de la photo dans la base de données
-    $sql = "DELETE FROM exhibitions WHERE id = $id";
-    
-    if(mysqli_query($conn, $sql)) {
-        echo "La photo a été supprimée avec succès.";
-    } else {
-        echo "Erreur : " . mysqli_error($conn);
+    // Suppression des photos dans la base de données
+    foreach($ids as $id) {
+        $sql = "DELETE FROM exhibitions WHERE id_exhibitions = $id";
+        mysqli_query($conn, $sql);
     }
+    
+    echo "Les photos ont été supprimées avec succès.";
     
     mysqli_close($conn);
 }
 ?>
 <!-- Formulaire de suppression -->
 <form method="post" action="">
-    <label for="id">Identifiant de la photo :</label>
-    <input type="number" name="id" required>
+    <?php
+    // Connexion à la base de données
+    $servername = "127.0.0.1";
+    $username = "riozacki";
+    $password = "Domino.bae.713";
+    $dbname = "maximarmengolcasino";
+    
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if(!$conn) {
+        die("Connexion échouée : " . mysqli_connect_error());
+    }
+    
+    // Récupération de toutes les photos
+    $sql = "SELECT id_exhibitions, titre, date, image FROM exhibitions;";
+    $result = mysqli_query($conn, $sql);
+    $photos = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    // Affichage des photos avec des cases à cocher
+    foreach($photos as $photo) {
+        $id = $photo["id_exhibitions"];
+        $titre = $photo["titre"];
+        $date = $photo["date"];
+        $image = $photo["image"];
+        echo "<label><input type='checkbox' name='ids[]' value='$id'>$titre - $date</label><br>";
+    }
+    
+    mysqli_close($conn);
+    ?>
     <input type="submit" name="submit" value="Supprimer">
 </form>

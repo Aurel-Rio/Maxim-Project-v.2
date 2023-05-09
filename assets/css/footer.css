@@ -1,8 +1,25 @@
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;
     background-color: black;
+    color: aliceblue;
+    border-top:1px solid white ;
+}
+
+.site-name{
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 17px;
+}
+
+.social-icon{
+    float: right;
+    margin: 15px 25px 0px 0px;
+    transform: scale(2);
+}
+
+footer a {
     color: aliceblue;
 }

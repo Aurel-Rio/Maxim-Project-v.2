@@ -1,8 +1,5 @@
-
-
 <?php
 include('../includes/navbar.php');
-include('../includes/footer.php');
 $servername = "127.0.0.1";
 $username = "riozacki";
 $password = "Domino.bae.713";
@@ -15,26 +12,46 @@ if(!$conn) {
 }
 
 // Exécution de la requête SQL
-$sql = "SELECT id_exhibitions, titre, date, image FROM exhibitions;";
+$sql = "SELECT id_exhibitions, titre, date, image, categorie FROM exhibitions;";
 $result = mysqli_query($conn, $sql);
 
-// Vérification des erreurs lors de l'exécution de la requête SQL
-if(!$result) {
-    echo "Erreur : " . mysqli_error($conn);
-}
-
-// Récupération des données de toutes les photos
+// Vérification des erreurs lors de l'exécution de la requête
 $photos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-// Affichage des données de toutes les photos dans une liste HTML
-echo "<ul>";
-foreach($photos as $photo) {
-    $id = $photo["id_exhibitions"];
-    $titre = $photo["titre"];
-    $date = $photo["date"];
-    $image = $photo["image"];
-    echo "<li><a href='photo.php?id=$id'><img src='$image' alt='$titre' width='100' height='100'>$titre - $date</a></li>";
-}
-echo "</ul>";
+// Création d'un tableau associatif qui associe les catégories à leurs descriptions
+$categories = [
+    "art_digital" => "Art digital - Conceptuel, art moderne, travail sur Photoshop",
+    "noir_blanc" => "Noir & Blanc - Photos de voyage, scènes de vie, portraits"
+];
 
+// Parcours des photos et création d'un tableau associatif qui associe chaque catégorie à un tableau contenant les photos correspondantes
+$photos_categorie = [];
+foreach ($photos as $photo) {
+    $categorie = $photo["categorie"];
+    if (!isset($photos_categorie[$categorie])) {
+        $photos_categorie[$categorie] = [];
+    }
+    $photos_categorie[$categorie][] = $photo;
+}
+?>
+
+<DOCTYPE html>
+<h2 class="secondary_title_style"><center>GALLERY</center></h2>
+
+<?php
+// Parcours des catégories et affichage des photos correspondantes
+foreach ($categories as $categorie => $description) {
+    echo "<h3>$description</h3>";
+    echo "<ul id='gallery'>";
+    foreach ($photos_categorie[$categorie] as $photo) {
+        $id = $photo["id_exhibitions"];
+        $titre = $photo["titre"];
+        $date = $photo["date"];
+        $image = $photo["image"];
+        $categorie = $photo["categorie"];
+        echo "<li><a href='photo.php?id=$id'><br/><img src='$image' alt='$titre' width='100' height='100'><br/>$titre - $date</a></li>";
+    }
+    echo "</ul>";
+}
+include('../includes/footer.php');
 ?>

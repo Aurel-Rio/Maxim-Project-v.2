@@ -15,10 +15,11 @@ error_reporting(E_ALL);
     <title>Accueil - Galerie de Maxim Casino Armengol</title>
 </head>
 <body>
+
+    <section id="accueil">
     <h1>Bienvenue à la Galerie de Maxim Casino Armengol</h1>
     <p>Notre galerie d'art est heureuse de vous présenter ses dernières expositions. Nous travaillons avec les meilleurs artistes de la région pour vous proposer une expérience artistique unique.</p>
     <p>Parcourez notre sélection d'expositions en cours et à venir, et n'hésitez pas à nous contacter pour plus d'informations ou pour prendre rendez-vous avec l'un de nos conseillers en art.</p>
-
     <?php
     // Sélection de toutes les expositions
     $sql = "SELECT * FROM exhibitions";
@@ -26,7 +27,7 @@ error_reporting(E_ALL);
     ?>
 
     <h2>Expositions en cours</h2>
-    <ul>
+    <ul id="expo_accueil">
         <?php
         // Affichage des expositions en cours
         while ($row = mysqli_fetch_assoc($result)) {
@@ -38,5 +39,6 @@ error_reporting(E_ALL);
         }
         ?>
     </ul>
+    </section>
 </body>
 </html>
