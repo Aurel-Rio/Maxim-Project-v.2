@@ -26,8 +26,8 @@ $photos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // Création d'un tableau associatif qui associe les catégories à leurs descriptions
 $categories = [
-    "Art digital" => "Art digital - Conceptuel, art moderne, travail sur Photoshop",
-    "Noir et Blanc" => "Noir & Blanc - Photos de voyage, scènes de vie, portraits"
+    "Art digital" => "Art digital",
+    "Noir et Blanc" => "Noir & Blanc"
 ];
 
 // Parcours des photos et création d'un tableau associatif qui associe chaque catégorie à un tableau contenant les photos correspondantes
@@ -46,16 +46,17 @@ foreach ($photos as $photo) {
 <head>
 	<title>Galerie d'art</title>
 	<link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
-
-	<h2 class="secondary_title_style"><center>GALLERY</center></h2>
+    <section id='gallery'>
+	<h2 id="secondary_title_style"><center>GALLERY</center></h2>
 
 	<?php
 	// Parcours des catégories et affichage des photos correspondantes
 	foreach ($categories as $categorie => $description) {
-	    echo "<h3>$description</h3>";
-	    echo "<ul id='gallery'>";
+	    echo "<h3 id='third_title_style'>$description</h3>";
+	    echo "<ul>";
 	    foreach ($photos_categorie[$categorie] as $photo) {
 	        $id = $photo["id_exhibitions"];
 	        $titre = $photo["titre"];
@@ -63,12 +64,15 @@ foreach ($photos as $photo) {
 	        $lieu = $photo["lieu"];
 	        $image = $photo["image"];
 	        $categorie = $photo["categorie"];
-	        echo "<li><a href='photo.php?id=$id'><img src='$image' alt='$titre' width='100' height='100'><br/>$titre - $date - $lieu</a></li>";
+	        echo "<li><a href='sphoto.php?id=$id'><img src='$image' alt='$titre' width='100' height='100'><br/>$titre - $date - $lieu</a></li>";
 	    }
 	    echo "</ul>";
 	}
-	include('../includes/footer.php');
-	?>
 
+	?>
+</section>
 </body>
+<?php
+	include('../includes/footer.php');
+?>
 </html>

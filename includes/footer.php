@@ -9,12 +9,11 @@
   <body>
     <footer>
       <div class="footer-links">
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+
+        <a href="https://instagram.com/maxim.casino?igshid=ZGUzMzM3NWJiOQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="site-name">
-      <p>© 2023 Maxim Casino Armengol - Tous droits réservés.</p>
+      <p>Developed by Sevant Aurélien  © 2023 Maxim Casino Armengol - Tous droits réservés.</p>
       </div>
     </footer>
   </body>

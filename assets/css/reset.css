@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Poppins-Regular';
     src: url('../font/Poppins-Regular.ttf') format('truetype');
@@ -14,8 +16,8 @@
 
 body{
     background: linear-gradient(223deg, rgba(0,0,0,1) 0%, rgb(39, 39, 39) 22%, rgba(0,0,0,1) 52%, rgba(70,70,70,1) 81%, rgba(0,0,0,1) 100%);
-    color: white;
-   
+    color: rgb(156, 154, 154);
+
     background-attachment: fixed;
 }
 
@@ -27,21 +29,30 @@ body{
     width: 100%;
     height: auto;
     opacity: 0.5;
-
-
-  }
+}
 
 #accueil {
-
     display: block;
     margin: auto;
     width: 75%;
-    margin-top: 25px;
+    margin-top: 450px;
     background-color: rgba(0, 0, 0, 0.555);
     padding: 45px;
     border: 1px solid rgba(216, 216, 216, 0.811);
+    margin-bottom: 75px;
+    font-size: 1.2em;
 }
 
+#accueil:nth-child(2n +1) {
+    display: block;
+    margin: auto;
+    width: 75%;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 45px;
+    border: 1px solid rgba(216, 216, 216, 0.811);
+    margin-bottom: 75px;
+}
 
 #accueil > h1,
 #accueil > h2:not(:first-child),
@@ -57,6 +68,7 @@ body{
     color: rgb(71, 71, 71);
     text-shadow: 1px 1px aliceblue;
 }
+
 #accueil a{
     color: aquamarine;
 }
@@ -69,11 +81,15 @@ body{
 #gallery {
     display: block;
     width: 75%;
-
     list-style: none;
     margin: auto;
     padding: 0;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 25px;
+    margin-top: 450px;
+    border: 1px solid rgb(136, 136, 136);
+    margin-bottom: 75px;
 
 }
 
@@ -89,8 +105,8 @@ body{
     margin: 0 auto;
     transform: scale(2.6);
     margin:105px;
-    border-radius: 10px;
-    border: 1px solid grey;
+    border-radius: 5px;
+    border: 1px solid rgb(61, 61, 61);
 }
 
 #gallery a {
@@ -101,3 +117,32 @@ body{
     transition: 0.4s;
     transform: scale(3.5);
 }
+
+#secondary_title_style{
+
+    font-size: 2.5em;
+    font-family: 'Foldit';
+    text-align: center;
+    margin-bottom: 45px;
+
+    border: 1px solid white;
+    padding: 15px;
+    background-color: rgba(53, 53, 53, 0.5);
+    border-radius: 5px;
+    color: rgb(71, 71, 71);
+    text-shadow: 1px 1px aliceblue;
+}
+
+#third_title_style{
+    margin: 35px;
+    border: 1px solid white;
+    padding: 15px;
+    background-color: rgba(53, 53, 53, 0.5);
+    border-radius: 5px;
+    color: rgb(71, 71, 71);
+    text-shadow: 1px 1px aliceblue;
+}
+
+
+
+

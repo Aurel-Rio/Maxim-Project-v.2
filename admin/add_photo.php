@@ -84,7 +84,7 @@
         <label>Catégorie :</label><br>
         <select name="categorie">
             <option value="Art digital">Art digital</option>
-            <option value="Noir & Blanc">Noir & Blanc</option>
+            <option value="Noir et Blanc">Noir & Blanc</option>
         </select><br><br>
         <label>Image :</label><br>
         <input type="file" name="image" accept="image/*" required><br><br>
