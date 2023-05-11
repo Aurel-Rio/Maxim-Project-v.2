@@ -52,13 +52,13 @@ Ma démarche ici est de faire voir que l'aspect culturel et artistique est égal
     </section>
 
     <div id="form_admin" class="display_none">
-        <form action="<?php echo BASE_URL; ?>admin/login.php" method="post">
+    <form action="<?php echo BASE_URL; ?>admin/login.php" method="post">
 
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username"><br>
+            <label for="pseudo">Nom d'utilisateur :</label>
+            <input type="text" id="pseudo" name="pseudo"><br>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password"><br>
+            <label for="mdp">Mot de passe :</label>
+            <input type="mdp" id="mdp" name="mdp"><br>
 
             <input type="submit" value="Se connecter">
         </form>
