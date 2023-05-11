@@ -5,7 +5,7 @@
 }
 
 .no-transition{
-    transition: 0s;
+    transition: none !important;
 }
 
 nav.big{
