@@ -4,9 +4,9 @@
     src: url('../font/Poppins-Regular.ttf') format('truetype');
 }
 
-nav {
+nav.big{
     z-index: 9999;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     position: fixed;
     top: 0;
     left:0;
@@ -17,14 +17,14 @@ nav {
     border-bottom: 1px solid white;
 }
 
-nav ul {
-    transition: all 0.4s ease-in-out;
+nav.big ul {
+    transition: all 0.2s ease-in-out;
     display: flex;
     float: right;
     margin: 320px 25px 0px 0px;
 }
 
-nav ul li {
+nav.big ul li {
     z-index: 2;
     margin-right: 25px;
     padding: 5px 10px 5px 10px;
@@ -32,32 +32,30 @@ nav ul li {
     border: 1px solid grey;
     border-radius: 5px;
     background: linear-gradient(223deg, rgba(0, 0, 0, 1) 0%, rgb(39, 39, 39) 22%, rgba(0, 0, 0, 1) 52%, rgba(70, 70, 70, 1) 81%, rgba(0, 0, 0, 1) 100%);
-    transition: all .4s;
 }
 
-nav ul li:hover {
-
+nav.big ul li:hover {
     background: linear-gradient(36deg, rgba(97,97,97,1) 0%, rgba(37,31,0,1) 16%, rgba(0,0,0,1) 29%, rgba(52,39,0,1) 53%, rgba(87,87,87,1) 83%, rgba(0,0,0,1) 100%);  
     transform: scale(1.1);
 }
 
-nav a {
+nav.big a {
     color: aliceblue;
 }
 
-nav h2 {
-    transition: all 0.4s ease-in-out;
+nav.big h2 {
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 10px;
     left: 25%;
-  font-family: 'Poppins-Regular';
+   font-family: 'Poppins-Regular';
     color: rgb(71, 71, 71);
     text-shadow: 1px 1px rgb(255, 251, 240);
     font-size: 8em;
 }
 
-#logo_nav {
-    transition: all 0.4s ease-in-out;
+nav.big #logo_nav {
+    transition: all 0.2s ease-in-out;
     width: 350px;
     height: 350px;
     margin: 10px 0px 0px 15px;
@@ -67,7 +65,11 @@ nav h2 {
 
 
 nav.scrolled {
-    transition: all 0.4s ease-in-out;
+    z-index: 9999;
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left:0;
     width: 100%;
     height: 100px;
     background-color: black;
@@ -76,7 +78,7 @@ nav.scrolled {
 }
 
 nav.scrolled ul {
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     display: flex;
     float: right;
     margin: 32px 25px 0px 0px;
@@ -103,7 +105,7 @@ nav.scrolled a {
 }
 
 nav.scrolled h2 {
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 20px;
     left: 240px;
@@ -114,7 +116,7 @@ nav.scrolled h2 {
 }
 
 nav.scrolled #logo_nav {
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     width: 90px;
     height: 90px;
     margin: 5px 0px 0px 15px;
