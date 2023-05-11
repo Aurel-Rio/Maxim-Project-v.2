@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 /*
 window.addEventListener("scroll", function() {
   const navbar = document.querySelector("nav");

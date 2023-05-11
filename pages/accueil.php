@@ -2,6 +2,7 @@
 // Inclusion du fichier de configuration de la base de données
 require_once("./includes/config.php");
 include('./includes/navbar.php');
+
 define('BASE_URL', 'http://localhost/MAXIM_ARMENGOL_CASINO_php_version/');
 
 ini_set('display_errors', 1);
@@ -58,7 +59,7 @@ Ma démarche ici est de faire voir que l'aspect culturel et artistique est égal
             <input type="text" id="pseudo" name="pseudo"><br>
 
             <label for="mdp">Mot de passe :</label>
-            <input type="mdp" id="mdp" name="mdp"><br>
+            <input type="password" id="mdp" name="mdp"><br>
 
             <input type="submit" value="Se connecter">
         </form>
