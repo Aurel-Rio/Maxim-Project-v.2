@@ -2,6 +2,7 @@
 // Inclusion du fichier de configuration de la base de données
 require_once("./includes/config.php");
 include('./includes/navbar.php');
+define('BASE_URL', 'http://localhost/MAXIM_ARMENGOL_CASINO_php_version/');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -51,7 +52,8 @@ Ma démarche ici est de faire voir que l'aspect culturel et artistique est égal
     </section>
 
     <div id="form_admin" class="display_none">
-        <form action="login.php" method="post">
+        <form action="<?php echo BASE_URL; ?>admin/login.php" method="post">
+
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" id="username" name="username"><br>
 
