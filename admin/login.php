@@ -13,13 +13,13 @@ if (isset($_POST['submit'])) {
 
     if (!$result) {
         $_SESSION['error'] = "Pseudo ou mot de passe incorrect";
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 
     if (!password_verify($mdp, $result['mdp'])) {
         $_SESSION['error'] = "Pseudo ou mot de passe incorrect";
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 
