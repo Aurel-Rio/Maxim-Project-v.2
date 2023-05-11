@@ -1,11 +1,9 @@
-window.onload = function() {
-  // votre code JavaScript ici
+document.addEventListener("DOMContentLoaded", function() {
   const navbar = document.querySelector("nav");
   
-  if (window.location.pathname.includes("pages/accueil.php")) { // Vérifie si la page actuelle est la page d'accueil
+  if (window.location.pathname.includes("index.php")) {
     window.addEventListener("scroll", function() {
-      const navbar = document.querySelector("nav");
-      if (window.scrollY > 0) {
+      if (window.pageYOffset > 0) {
         navbar.classList.remove("big");
         navbar.classList.add("scrolled");
       } else {
@@ -13,9 +11,11 @@ window.onload = function() {
         navbar.classList.add("big");
       }
     });
+  } else {
+    navbar.classList.add("no-transition");
+    navbar.classList.add("scrolled");
   }
-};
-
+});
 
 
 

@@ -31,11 +31,11 @@ body{
     opacity: 0.5;
 }
 
-#accueil {
+#accueil_one {
     display: block;
     margin: auto;
     width: 75%;
-    margin-top: 450px;
+    margin-top: 440px;
     background-color: rgba(0, 0, 0, 0.555);
     padding: 45px;
     border: 1px solid rgba(216, 216, 216, 0.811);
@@ -43,11 +43,22 @@ body{
     font-size: 1.2em;
 }
 
-#accueil:nth-child(2n +1) {
+#accueil_two {
     display: block;
     margin: auto;
     width: 75%;
     margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 45px;
+    border: 1px solid rgba(216, 216, 216, 0.811);
+    margin-bottom: 75px;
+}
+
+#accueil {
+    display: block;
+    margin: auto;
+    width: 75%;
+    margin-top: 140px;
     background-color: rgba(0, 0, 0, 0.555);
     padding: 45px;
     border: 1px solid rgba(216, 216, 216, 0.811);
@@ -87,7 +98,7 @@ body{
     text-align: center;
     background-color: rgba(0, 0, 0, 0.466);
     padding: 25px;
-    margin-top: 450px;
+    margin-top: 140px;
     border: 1px solid rgb(136, 136, 136);
     margin-bottom: 75px;
 

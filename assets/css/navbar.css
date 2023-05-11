@@ -4,6 +4,10 @@
     src: url('../font/Poppins-Regular.ttf') format('truetype');
 }
 
+.no-transition{
+    transition: 0s;
+}
+
 nav.big{
     z-index: 9999;
     transition: all 0.2s ease-in-out;
@@ -15,6 +19,7 @@ nav.big{
     background-color: black;
     color: aliceblue;
     border-bottom: 1px solid white;
+    
 }
 
 nav.big ul {

@@ -6,7 +6,7 @@
   <script defer src="/MAXIM_ARMENGOL_CASINO_php_version/assets/js/navbar.js"></script>
   </head>
   <body>
-    <nav class="big">
+  <nav class="big no-transition">
       <img id="logo_nav" src="/MAXIM_ARMENGOL_CASINO_php_version/assets/img/logo.jpg" alt="Logo Maxim">
       <h2>MAXIM CASINO ARMENGOL </h2>
       <ul>
