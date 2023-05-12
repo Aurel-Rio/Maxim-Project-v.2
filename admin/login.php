@@ -1,44 +1,58 @@
+
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+// Inclusion du fichier de configuration de la base de données
+require("../includes/config.php");
 
-require_once('../includes/config.php');
+// Vérification si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-session_start();
+    // Récupération des valeurs des champs
+    $pseudo = trim($_POST["pseudo"]);
+    $password = $_POST["mdp"];
 
-if (isset($_POST['submit'])) {
-    $pseudo = htmlspecialchars($_POST['pseudo']);
-    $mdp = htmlspecialchars($_POST['mdp']);
+    var_dump($_POST);
 
-    echo "pseudo : " . $pseudo . "<br>";
-    echo "mdp : " . $mdp . "<br>";
+    echo "Pseudo : ".$pseudo."<br>";
+    echo "Mot de passe : ".$password."<br>";
 
-    $stmt = $pdo->prepare("SELECT pseudo, mdp FROM admin WHERE pseudo = :pseudo");
-    $stmt->execute(array(':pseudo' => $pseudo));
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Vérification si l'utilisateur existe déjà
+    $sql = "SELECT * FROM admin WHERE pseudo = '$pseudo'";
+    $result = mysqli_query($conn, $sql);
 
-    var_dump($result);
+    echo "Nombre de résultats : ".mysqli_num_rows($result)."<br>";
+    echo "Requête SQL : ".$sql."<br>";
+    
+    if (mysqli_num_rows($result) == 0) {
+        // Si l'utilisateur n'existe pas, on ajoute un nouvel utilisateur
 
-    if (!$result) {
-        $_SESSION['error'] = "Pseudo ou mot de passe incorrect";
-        echo "Erreur de connexion : Pseudo ou mot de passe incorrect";
-        header('Location: index.php');
-        exit();
+        // Hashage du mot de passe en utilisant BCRYPT
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+        // Insertion dans la base de données
+        $sql = "INSERT INTO admin (pseudo, password) VALUES ('$pseudo', '$hashed_password')";
+        if (!mysqli_query($conn, $sql)) {
+            // Erreur lors de l'insertion dans la base de données
+            echo "Erreur : " . mysqli_error($conn);
+            exit;
+        }
+        echo "Nouvel utilisateur ajouté avec succès.<br>";
+    } else {
+        // Si l'utilisateur existe déjà, on vérifie le mot de passe
+
+        // Récupération des données de l'utilisateur
+        $row = mysqli_fetch_assoc($result);
+
+        // Vérification du mot de passe hashé
+        if (!password_verify($password, $row["password"])) {
+            // Mot de passe incorrect
+            echo "Mot de passe incorrect.";
+            exit;
+        }
+        echo "Utilisateur existant vérifié avec succès.<br>";
     }
 
-    if (!password_verify($mdp, $result['mdp'])) {
-        $_SESSION['error'] = "Pseudo ou mot de passe incorrect";
-        echo "Erreur de connexion : Pseudo ou mot de passe incorrect";
-        header('Location: index.php');
-        exit();
-    }
-
-    // Si tout est bon, on redirige vers la page add_photo.php
-    header('Location: add_photo.php');
-    exit();
+    // Redirection vers la page d'accueil de l'administration
+    header("Location: add_photo.php");
+    exit;
 }
-
-echo "Le formulaire n'a pas été soumis.";
-
-unset($_SESSION['error']);
 ?>

@@ -35,7 +35,7 @@ error_reporting(E_ALL);
             $date = date_create($row['date']);
             
             $formatDate = date_format($date, 'd/m/Y');
-            echo "<li><a href='exhibition.php?id="  . $row['id_exhibitions'] . "'>" . $row['titre'] . " - Du " . $formatDate . "</a></li>";
+            echo "<li><a href='expositions.php?id="  . $row['id_exhibitions'] . "'>" . $row['titre'] . " - Du " . $formatDate . "</a></li>";
         }
         ?>
     </ul>
