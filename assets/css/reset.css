@@ -154,6 +154,45 @@ body{
     text-shadow: 1px 1px aliceblue;
 }
 
+.display_none{
+    display: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid red;
+    padding: 55px;
+    border-radius: 10px;
+    background-color: black;
+    font-size: 2.5em;
+}
+
+.display_none>form>input{
+    font-size: 1em;
+}
+
+#new_body{
+    display: none;
+    position: absolute;
+    z-index: 8999;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 
+#admin_style{
+    background-color: black;
+    color: aliceblue;
+    text-align: left;
+    height: 100vh;
+    width: 100vw;
+}
 
+#admin_style>form{
+    border: 1px solid red;
+}

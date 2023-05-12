@@ -68,9 +68,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../assets/css/reset.css">
     <title>Ajouter une photo - Galerie de Maxim Casino Armengol</title>
 </head>
-<body>
+<body id="admin_style">
     <h1>Ajouter une photo</h1>
     <form method="POST" enctype="multipart/form-data">
         <label>Titre :</label><br>

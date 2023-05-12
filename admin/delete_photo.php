@@ -27,7 +27,11 @@ if(isset($_POST["submit"])) {
 }
 ?>
 <!-- Formulaire de suppression -->
-<form method="post" action="">
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="../assets/css/reset.css">
+    </head>
+<form method="post" action="" id="admin_style">
     <?php
     // Connexion à la base de données
     $servername = "127.0.0.1";
@@ -56,5 +60,6 @@ if(isset($_POST["submit"])) {
     
     mysqli_close($conn);
     ?>
+
     <input type="submit" name="submit" value="Supprimer">
 </form>

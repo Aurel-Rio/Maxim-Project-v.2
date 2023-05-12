@@ -74,8 +74,11 @@ if(isset($_POST["submit"])) {
 <html>
 <head>
 	<title>Modifier une exposition - MaximArmenGol</title>
+    <head>
+        <link rel="stylesheet" href="../assets/css/reset.css">
+    </head>
 </head>
-<body>
+<body id="admin_style">
 	<h1>Modifier une exposition</h1>
 	<form action="update_photo.php" method="post" enctype="multipart/form-data">
 		<label for="id">Identifiant :</label>

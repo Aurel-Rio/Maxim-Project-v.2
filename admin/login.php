@@ -1,35 +1,26 @@
-
 <?php
-// Inclusion du fichier de configuration de la base de données
-require("../includes/config.php");
-
 // Vérification si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Inclusion du fichier de configuration de la base de données
+    require("../includes/config.php");
+
     // Récupération des valeurs des champs
     $pseudo = trim($_POST["pseudo"]);
-    $password = $_POST["mdp"];
-
-    var_dump($_POST);
-
-    echo "Pseudo : ".$pseudo."<br>";
-    echo "Mot de passe : ".$password."<br>";
+    $mdp = $_POST["mdp"];
 
     // Vérification si l'utilisateur existe déjà
     $sql = "SELECT * FROM admin WHERE pseudo = '$pseudo'";
     $result = mysqli_query($conn, $sql);
 
-    echo "Nombre de résultats : ".mysqli_num_rows($result)."<br>";
-    echo "Requête SQL : ".$sql."<br>";
-    
     if (mysqli_num_rows($result) == 0) {
         // Si l'utilisateur n'existe pas, on ajoute un nouvel utilisateur
 
         // Hashage du mot de passe en utilisant BCRYPT
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        $hashed_password = password_hash("MaCsIm.9.sav", PASSWORD_BCRYPT);
 
         // Insertion dans la base de données
-        $sql = "INSERT INTO admin (pseudo, password) VALUES ('$pseudo', '$hashed_password')";
+        $sql = "INSERT INTO admin (pseudo, mdp) VALUES ('MacSim', '$hashed_password')";
         if (!mysqli_query($conn, $sql)) {
             // Erreur lors de l'insertion dans la base de données
             echo "Erreur : " . mysqli_error($conn);
@@ -43,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
 
         // Vérification du mot de passe hashé
-        if (!password_verify($password, $row["password"])) {
+        if (!password_verify($mdp, $row["mdp"])) {
             // Mot de passe incorrect
             echo "Mot de passe incorrect.";
             exit;
