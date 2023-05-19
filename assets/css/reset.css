@@ -5,7 +5,6 @@
     src: url('../font/Poppins-Regular.ttf') format('truetype');
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -186,13 +185,22 @@ body{
 
 
 #admin_style{
+    display: block;
     background-color: black;
     color: aliceblue;
     text-align: left;
     height: 100vh;
     width: 100vw;
+    margin: auto;
+    width: 600px;
+    text-align: center;
+    margin-top: 25px;
 }
 
 #admin_style>form{
     border: 1px solid red;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0.432);
 }

@@ -13,6 +13,7 @@ error_reporting(E_ALL);
 <head>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <title>Expositions - Maxim Casino Armengol</title>
+    
 </head>
 <body>
 

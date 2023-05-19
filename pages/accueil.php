@@ -51,7 +51,7 @@ Ma démarche ici est de faire voir que l'aspect culturel et artistique est égal
         ?>
     </ul>
     </section>
-    <div id="new_body"></div>
+    <div id="new_body"></div>s
 
     <div id="myDiv" class="display_none">
     <form action="<?php echo BASE_URL; ?>admin/login.php" method="post">

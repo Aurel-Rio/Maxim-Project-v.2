@@ -2,7 +2,7 @@
 // Inclusion du fichier de configuration de la base de données
 require_once("./includes/config.php");
 
-
+//Affichage des erreurs
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -21,5 +21,5 @@ switch ($page) {
         include 'pages/404.php';
         break;
 }
-
 ?>
+
