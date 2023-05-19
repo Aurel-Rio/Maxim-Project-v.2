@@ -20,6 +20,7 @@ body{
     background-attachment: fixed;
 }
 
+
 #line_back {
     position: fixed;
     z-index: -1;
@@ -86,6 +87,10 @@ body{
 #accueil p {
     text-align: left;
     text-shadow: 2px 2px black;
+}
+
+.contact_style>a{
+    color: red;
 }
 
 #gallery {
@@ -203,4 +208,26 @@ body{
     border-radius: 10px;
     margin-top: 25px;
     background-color: rgba(0, 0, 0, 0.432);
+}
+
+#redirect_admin{
+    position: absolute;
+    display: flex;
+    top: 25px;
+    left: 25px;
+}
+
+#redirect_admin>ul>li{
+    border: 1px solid red;
+    margin-top: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.432);
+}
+#redirect_admin>ul>li:hover{
+    background-color: rgba(112, 0, 0, 0.815);
+}
+
+#redirect_admin>ul>li>a{
+    color: aliceblue;
 }
