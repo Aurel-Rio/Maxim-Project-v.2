@@ -9,15 +9,13 @@ error_reporting(E_ALL);
 
 // Vérification de l'accès à la route "/admin"
 $url = $_SERVER['REQUEST_URI'];
-$file = basename($url);
-$isAdminPage = strpos($url, '/admin/') !== false && $file === 'login.php';
-if ($isAdminPage) {
-    // Vérifier si l'administrateur est connecté
-    if (!$adminConnected) {
-        // Rediriger l'utilisateur vers une autre page ou renvoyer une réponse d'erreur
-        header('Location: /');
-        exit;
-    }
+$isAdminPage = strpos($url, '/admin/') !== false;
+
+session_start();
+if ($isAdminPage && !isset($_SESSION['admin'])) {
+    // Rediriger l'utilisateur vers une autre page ou renvoyer une réponse d'erreur
+    header('Location: /'); // Remplacez "/" par l'URL de la page vers laquelle vous souhaitez rediriger les utilisateurs non authentifiés
+    exit;
 }
 
 // Chargement de la page d'accueil
