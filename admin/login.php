@@ -1,7 +1,13 @@
 <?php
+// Vérification si l'utilisateur est déjà connecté
+session_start();
+if (isset($_SESSION["admin"])) {
+    header("Location: add_photo.php");
+    exit;
+}
+
 // Vérification si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     // Inclusion du fichier de configuration de la base de données
     require("../includes/config.php");
 
@@ -30,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Authentification réussie, définir la session de l'administrateur
-    session_start();
     $_SESSION['admin'] = true;
 
     // Redirection vers la page d'accueil de l'administration
