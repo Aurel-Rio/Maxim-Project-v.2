@@ -11,7 +11,8 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <title>Expositions - Maxim Casino Armengol</title>
     
 </head>

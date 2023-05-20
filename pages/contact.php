@@ -12,7 +12,8 @@ error_reporting(E_ALL);
 <html>
 
 <head>
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <title>Contactez-moi - Maxim Casino Armengol</title>
 </head>
 

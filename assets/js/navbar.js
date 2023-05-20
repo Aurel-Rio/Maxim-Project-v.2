@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Sélection de la navbar
   const navbar = document.querySelector("nav");
 
-  // Vérification de la condition pour appliquer la classe 'big'
-  if (window.location.pathname.includes("index.php") || window.location.pathname.includes("/pages/accueil.php"))  {
+  if (window.location.pathname.includes("http://servant-myporfolio.com/") || window.location.pathname.includes("/pages/accueil.php") || window.location.pathname === "/index.php") {
     // Ajout d'un écouteur d'événement de scroll à la fenêtre
     window.addEventListener("scroll", function() {
       // Vérification du défilement de la page
@@ -19,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
         navbar.classList.add("big");
       }
     });
+  
+  
   } else {
     // Pour les autres pages que 'index.php' et '/pages/accueil.php'
     // Ajouter la classe 'scrolled' et 'no-transition' à la navbar

@@ -3,7 +3,7 @@
 require_once("./includes/config.php");
 include('./includes/navbar.php');
 
-define('BASE_URL', 'http://localhost/MAXIM_ARMENGOL_CASINO_php_version/');
+define('BASE_URL', 'http://servant-myporfolio.com/');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -14,6 +14,8 @@ error_reporting(E_ALL);
 <html>
 <head>
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
     <title>Accueil - Galerie de Maxim Casino Armengol</title>
 </head>
 <body>

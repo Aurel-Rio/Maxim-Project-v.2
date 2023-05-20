@@ -1,9 +1,9 @@
 <?php
 include('../includes/navbar.php');
-$servername = "127.0.0.1";
-$username = "riozacki";
-$password = "Domino.bae.713";
-$dbname = "maximarmengolcasino";
+$servername = "qtxnahcriozacki0.mysql.db";
+$username = "qtxnahcriozacki0";
+$password = "Dominobae713";
+$dbname = "qtxnahcriozacki0";
 
 // Connexion à la base de données
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -45,7 +45,8 @@ foreach ($photos as $photo) {
 <html>
 <head>
 	<title>Galerie d'art</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../assets/css/reset.css">
+	<link rel="stylesheet" href="../assets/css/footer.css">
 
 </head>
 <body>
