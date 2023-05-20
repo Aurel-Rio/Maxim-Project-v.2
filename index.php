@@ -7,15 +7,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Vérification de l'accès à la route "/admin"
-$url = $_SERVER['REQUEST_URI'];
-$isAdminPage = strpos($url, '/admin/') !== false;
-
-session_start();
-if ($isAdminPage && !isset($_SESSION['admin'])) {
-    // Rediriger l'utilisateur vers une autre page ou renvoyer une réponse d'erreur
-    header('Location: /'); // Remplacez "/" par l'URL de la page vers laquelle vous souhaitez rediriger les utilisateurs non authentifiés
-    exit;
+// Vérification de l'accès à la page admin
+if ($page === 'admin') {
+    // Redirection vers la page de connexion admin si l'utilisateur n'est pas authentifié
+    if (!isset($_SESSION['admin'])) {
+        header('Location: index.php');
+        exit;
+    }
 }
 
 // Chargement de la page d'accueil
